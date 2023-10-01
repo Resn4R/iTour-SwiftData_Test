@@ -11,30 +11,32 @@ import SwiftUI
 struct ContentView: View {
     @Environment (\.modelContext) var modelContext
     
-    @Query var destinations: [Destination]
+    @State private var path = [Destination]()
+    @State private var sortOrder = SortDescriptor(\Destination.name)
     var body: some View {
-        NavigationStack{
-            List {
-                ForEach(destinations) { destination in
-                    NavigationLink(value: destination) {
-                        VStack(alignment: .leading) {
-                            Text(destination.name)
-                                .font(.headline)
+        NavigationStack(path: $path){
+            DestinationListingView(sort: sortOrder)
+                .navigationTitle("iTour")
+                .navigationDestination(for: Destination.self, destination: EditDestinationView.init)
+                .toolbar {
+                    Button("Add Destination", systemImage: "plus", action: addDestination)
+                    
+                    Menu("Sort", systemImage: "arrow.up.arrow.down"){
+                        Picker("Sort", selection: $sortOrder) {
+                            Text("Name")
+                                .tag(SortDescriptor(\Destination.name))
                             
-                            Text(destination.date.formatted(date: .long, time: .shortened))
+                            Text("Priority")
+                                .tag(SortDescriptor(\Destination.priority))
+                            
+                            Text("Date")
+                                .tag(SortDescriptor(\Destination.date))
                         }
+                        .pickerStyle(.inline)
                     }
                 }
-                .onDelete(perform: deleteDestinations)
-            }
-        }
-        .navigationTitle("iTour")
-        .navigationDestination(for: Destination.self, destination: EditDestinationView.init) 
-        .toolbar {
-            Button("Add Samples", action: addSamples)
         }
     }
-    
     func addSamples() {
         let rome = Destination(name: "Rome")
         let florence = Destination(name: "Florence")
@@ -45,11 +47,12 @@ struct ContentView: View {
         modelContext.insert(naples)
     }
     
-    func deleteDestinations(_ indexSet: IndexSet){
-        for index in indexSet{
-            let destination = destinations[index]
-            modelContext.delete(destination)
-        }
+
+    
+    func addDestination() {
+        let destination = Destination()
+        modelContext.insert(destination)
+        path = [destination]
     }
 }
 #Preview {
