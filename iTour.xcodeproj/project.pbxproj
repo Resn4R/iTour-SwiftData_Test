@@ -14,6 +14,7 @@
 		4F0903D42AC9DFFE00EE2C9B /* Destination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0903D32AC9DFFE00EE2C9B /* Destination.swift */; };
 		4F0903D62AC9E51000EE2C9B /* EditDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0903D52AC9E51000EE2C9B /* EditDestinationView.swift */; };
 		4F0903D82AC9EAFB00EE2C9B /* DestinationListingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0903D72AC9EAFB00EE2C9B /* DestinationListingView.swift */; };
+		4F0903DA2ACB126F00EE2C9B /* Sight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0903D92ACB126F00EE2C9B /* Sight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		4F0903D32AC9DFFE00EE2C9B /* Destination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Destination.swift; sourceTree = "<group>"; };
 		4F0903D52AC9E51000EE2C9B /* EditDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDestinationView.swift; sourceTree = "<group>"; };
 		4F0903D72AC9EAFB00EE2C9B /* DestinationListingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationListingView.swift; sourceTree = "<group>"; };
+		4F0903D92ACB126F00EE2C9B /* Sight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				4F0903D72AC9EAFB00EE2C9B /* DestinationListingView.swift */,
 				4F0903D52AC9E51000EE2C9B /* EditDestinationView.swift */,
 				4F0903D32AC9DFFE00EE2C9B /* Destination.swift */,
+				4F0903D92ACB126F00EE2C9B /* Sight.swift */,
 				4F0903C92AC9DD2000EE2C9B /* Assets.xcassets */,
 				4F0903CB2AC9DD2000EE2C9B /* Preview Content */,
 			);
@@ -150,6 +153,7 @@
 				4F0903C62AC9DD1E00EE2C9B /* iTourApp.swift in Sources */,
 				4F0903D42AC9DFFE00EE2C9B /* Destination.swift in Sources */,
 				4F0903D62AC9E51000EE2C9B /* EditDestinationView.swift in Sources */,
+				4F0903DA2ACB126F00EE2C9B /* Sight.swift in Sources */,
 				4F0903D82AC9EAFB00EE2C9B /* DestinationListingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
